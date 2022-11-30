@@ -13,13 +13,24 @@ body { margin: 0; padding: 0; }
 </head>
 <body>
 <style>
+	.gui { 
 
+	}
+
+	.btns { 
+		margin: 0 auto;
+        width: 500px;
+        height: 200px;
+		display: flex;
+		justify-content: space-between;
+		z-index: 99;
+	}
     #fly {
         display: inline-block;
         position: relative;
         width: 100px;
         height: 100px;
-		top: 200px;
+		top: 350px;
 		left: 35px;
         padding: 10px;
         border: 3px solid #46b2bb;
@@ -30,6 +41,8 @@ body { margin: 0; padding: 0; }
         font-weight: 100;
         color: #fff;
         background: #46b2bb;
+		touch-action: none;
+		z-index: 99;
     }
 
     #fly2 {
@@ -37,7 +50,7 @@ body { margin: 0; padding: 0; }
         position: relative;
         width: 100px;
         height: 100px;
-		top: 200px;
+		top: 350px;
 		left: 35px;
         padding: 10px;
         border: 3px solid #46b2bb;
@@ -47,7 +60,8 @@ body { margin: 0; padding: 0; }
         font-size: 15px;
         font-weight: 100;
         color: #46b2bb;
-        background: #fff;        
+        background: #fff;
+		touch-action: none;    
     }
 
     #fly3 {
@@ -55,7 +69,7 @@ body { margin: 0; padding: 0; }
         position: relative;
         width: 100px;
         height: 100px;
-		top: 200px;
+		top: 350px;
 		left: 35px;
         padding: 10px;
         border: 3px solid #f9ad9b;
@@ -66,6 +80,7 @@ body { margin: 0; padding: 0; }
         font-weight: 100;
         color: #fff;
         background: #f9ad9b;
+		touch-action: none;
     }
 
     /* 経路表示用のボタン */
@@ -86,61 +101,7 @@ body { margin: 0; padding: 0; }
 		border-radius: 3px;
 	}
 
-	/* 画像アイコンと説明用のスタイル */
-	#marker-school {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEW7eqZ59JMA6mx3vfVZg7n41Z10OCAqaWt8uVthsUO0wDAkETS1yqxficaZ0n9XgqI1ySgCJDykp-uACb7Z47IPM66BBuOa6vddgk0cOIxOghv7lopJDMBb2aAjwcyeK46b20RuvA0l2LDwXVO4eoNG=s893-no?authuser=0');
-		background-size: cover;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		cursor: pointer;
-	}
-
-	#marker-hospital {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEVZL7XyIhbvRN6alIU9RJgEwb_6DISbME2a2zlW7Tqi1kzq_pRbp2jodxvzXO4AI6IDXUxo1lRy5TyH9yzzo5qBdLq0JAqLYhfryaFKUHQAjoxCr6imc6DfvNJfTmmxlbBTqxeJ6KIX9vmgmYEWxVhl=s625-no?authuser=0');
-		background-size: cover;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		cursor: pointer;
-	}
-
-	#marker-park {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEWX41O5CGemJeMukWOxUgUqO7dpkMbi2ZwMm07XV8yciwa7t9lEfcCZpTVywHcfOAnuUmo_rkRmMbcRHsQCZvt9rrWmyVw9OI5wlmWyfnTyHq6CSm9Yj9WyWjIMjNW1bj6V5qHnR0V3vz026VKX8pCm=s625-no?authuser=0');
-		background-size: cover;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		cursor: pointer;
-	}
-
-    #marker-convenience-store {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEWD2WrFL57Wp_uoj1u53v_9zMeiQ7I5hy37fKiFrXT_ZvU1_V3eWPZwShdIA_K2m4XLMUsSlLYWuiKfK18tGif4qMDKx3tL5bRymwRxtbPnX9_DStxkeYIw-8kRbofT2KgGk3qFQOPp9B1TaewPPQpR=s893-no?authuser=0');
-		background-size: cover;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		cursor: pointer;
-	}
-
-    #marker-toilet {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEXbDtPLsh-ozO0o8HPn9jsRQKTblTWu5AHbN-ELWcYC8WJ7HKFyrd1V-xjBDFhLYAD46ysgACVtgbx2_pdXhd9t0yJEOnugKWRy9VjioaoY30JCTnMJPVL561kD1iKkJDqMWjeDrerS9nSUGLwmqwQt=s893-no?authuser=0');
-		background-size: cover;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		cursor: pointer;
-	}   
-    
-    #marker-food {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEX1-pcsp03rwNe5w1pIMyyy1CwjhFmzDgitTslO0yXCM_MNTGjpsx7Z9ZCGZi37SSA_FGV2h7eATeK_ODW-9qgdFpg2WJ8zE26ANUxOTxHClqROvGvbE_4UY4H2ccyyngT7D8nR7Pos7b8pDViXDjKH=w948-h820-no?authuser=0');
-		background-size: cover;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		cursor: pointer;
-	}   
-
+	/* 画像アイコンと説明用のスタイル */  
     #marker-building {
 		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEX2zaU8wICM4TyOgn8lIX85b23bbxX-IZcGloTC6epwSqiFlargjKh-6Jl03_aieL4INwwtJ8Odz6Qu7TcAnHhBNb3RUtP94WjXa89AedHOV2DI3F8AOYeNvUQRMUuPqQDcMPmrwip324GRbPrC11cw=s820-no?authuser=0');
 		background-size: cover;
@@ -186,42 +147,6 @@ body { margin: 0; padding: 0; }
 		cursor: pointer;
 	}
 
-    #marker-T-right {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEWzwcMZYqQ6Yd0afBo0pdUbIKJKHy32edEJ8VKfqxog18i-raz2lk7SUau028GdfmLckG3k4OrMdaWCK3ZjyFfxVTbG950NYXWHWb_LBHuKn20hqrLtDNriu-SjcvdoprFmGBrhULFT3uLcg0tbeyFu=s625-no?authuser=0');
-		background-size: cover;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		cursor: pointer;
-	}
-
-    #marker-T-left {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEXkm7dAj-XRje9ni5_NkIHTcj9tvPY6fmwIuka6rugArzGtI-SPFhy3k9jS1BPlRaz-WqaleUqAsqLgJIEat8FP1P92UUgj_-2rlhBpOWvxjM7Ct8wFTY2aeWnNT2zWAYN8px8c7uHf8ZnCLWOEF6ls=s625-no?authuser=0');
-		background-size: cover;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		cursor: pointer;
-	}
-
-    #marker-next-left {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEWt_UDbxQ621FKtzHfEvtlA0dRcniUA7_RYL3IgbUpDYA6KexTcp7z5LXfqoPjap25e90AgPz82YQS8Rsbjp0ODMYnjU0P6B7Q7tRcFMMNQsUcD8zKaLOs9svjE-Uw0B8lrZRoIHFjjrRHJQ8JHJ34v=s625-no?authuser=0');
-		background-size: cover;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		cursor: pointer;
-	}
-
-    #marker-cross-left {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEV2XhJA6xfRO4fz0B1-g2LvyekFxz0PoGhPV3O2sUTl3BTl1wEPn2KQj6TNWRyOJo31nSovFNU3RZJcNKXIFdwfw3xsOspdKsAPagHxzrsRRAEiTx3OG-zCWUa8AkGDLKu5aH-jOYUWVwk_z6gx8W_G=s625-no?authuser=0');
-		background-size: cover;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		cursor: pointer;
-	}
-
     #marker-cross-right {
 		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEW0cLgN1_i0AlDnok19Z3plBJOPTJRnHUu0xPlVKAwUKELcWUX-eJsiNK2Xievj5CNuqZzPR1v5Lxjcp5Uv7wkQGftoKi5LO96p6mQ9HMHj20hvRZu9ZxxDEhX6Z-3C-TkVtkA4zjpKKNLYIsN4-KHt=s893-no?authuser=0');
 		background-size: cover;
@@ -231,8 +156,91 @@ body { margin: 0; padding: 0; }
 		cursor: pointer;
 	}
 
-    #marker-straight {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEV_Lg-u24FtCsI8IA8GQTRNvTcXwVvmPKWQQRIrwgMYbAtw0hGPAVEvNaZIDEPIazbKU6F29CLt30AwuwHs4-l30ea8NAouVTCb72o273qXmCGk8oVU7T4Gs1z9St-hHv6HYTwC5onhNWqe0Hrp_34N=s893-no?authuser=0');
+	/* ここから使う */
+
+	#pic-toilet {
+		background-image: url('https://lh3.googleusercontent.com/WcDqjcJ-vJ6L3i6K8v1HO1zXnovL69NIog5lglbssq_CA47_jTEkv5_5MRL8R7OpqekKsIbIG4Zrdr3VUGZdPdiEcVOnOgjEtp6Hjdq7XR0p5ZDX2o50S_3vKUjsZp3jD53tDSzmrb-TkIMLkKgBdq1QePKWUQjie0Jw38OYEl0CKg6XqAKeNdJ95AVuCAMrj_cuW9FQdGUZ-8WzrJogdl5j1knoPPrcBgH_jkWCOcGRG41j6btThva6zgurS3tM2RaGZT6vR44i9WEew1ZBLYrqGVaua6vg6XwlteZz7YtTSNEkRYEbE3cuJUex9D9hXLeRnFsgqwSrYdV2BxZHtLdtzyq3emmGrPN2-bWLAlet_RwtLy3SGgj2vkc7Quxhfr1gwiJPbCI2S5cbacnkqBkkrPI-xA2Wt7-DbvxZg_-s--fvaKOSD3-52pixW3Vb6g2EErBcY3iU3E-BfUFRhYlY6FAex2v23lZZgqZdm90XiRLdufTBqH-yGUoDBat7ODgH9WamGooB4wZgRWtJ5UwLOzO8GOq-DVLDw7ZwD1r1lGPjx6WGqYntMJX5oOytP8MahxalH6unk5jEfLKJlP-QqVGSRmCIfbh-dqqJuqgcwXOKckvT1rmDPk_4S9HlRSqzajEiDx10Iozcf_ou3R4wMTjFNSqid2gbr60T-8P21Y59OMb4Ug1fMHTs--V1rjJUIQguL_a3AyCLol1eaWQnbtuwGDhqEgJLPpeqlKy8cqXwARyPbBbpgfWWwBmHsbV09Y6WhJSxUEAxvSYwbQgMUm3mS1YNqTw1Jqm4adXbg1VttOvcCWGoQvsTGpHPRtv62GH_aOv-gMPMaUAnrGdY1-hW9GaVNrPIsVvljelz4G1GlK1o8YZZNt33z9OVis4QCnz_lcQFAfhDMbCWB8z1sVE1e2J_hqNx5cfgzmcoQjNa=s856-no?authuser=0');
+		background-size: cover;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	#pic-hoseiseven {
+		background-image: url('https://lh3.googleusercontent.com/xuxzaHLTM678dMfLEBG1zW2DMEMpJ1yu2mPInbYRy8tnB0v-ry-z13DcaIlZRMI2ZWWDgp-oRi_r-lolEvnJVJczDN9ObbWXJPmimKf6rCf-jG0q3okLzcBcgQ_NgOeZXOXEYVY5FBvSvy-J3iNKp1uhwVHPvJn1ECYZrL11gXsvkERAr-pRMLbB1EHl-QHzLro6vrS331khjrNdZ9MDWgZT4uknu7Mw5to4fc6Cf56Osp82XZ9WgRBnm0I7-XgyT2JutQzWfPUJjQ1fdGeigrP2e5Zqsju1pgjy5bZ1qhngXIhyFUdkue-IewSH87sx_A2Zg6793h9EYOrf6iLFIfAOx1-iSjAbP_wzr5ZxvDEJZIvZ4aVS3fYAJtRPjzlFIDlGwx4XXqskUAKnPl_dJEkYDygTKbCLfQ-SSJ1q0A6LUS_Yqsl4z0YCHcHYI3CQHe7s9N0o_ASBlLlHyIws3PXYOOmxaxLICvRPI2NaZWh7i1-RZwFWgFCqQn9rzVaTT-5C0RTLTdH1HAyLEpxu5KU4T265wTCzY29VR1yeat52EYCRQn2QQB1lUM2yw8fz7rYJzl-p5VsMVP1lyilUWDDd_eYCFKD28QmaoV54YJU1u_qkLnN59ds8xG5y8IPMthvLKukEfh4vruZxTszhsqc_LQT6UZp-NEioMvHaY8Zq2-vaTh3CLCox-0nBHOnieDpnpOgIc2U_3FGceBTKV4TvPaCscsRKnfXZze6o6gEqFQkueqFiFZWuCV8FOGy0hOX_XOrRy0AflCYcfm46SPOt2K_LJ67AkG6gPmn3uM_UWo4_QEDCGLYJiISA7i4K01v1LWtnyoVdPfLhTah0nWhvOTFr_dkI-_6jDGJ3YM3SN8NBF9-raQq3d9wxRuoN4WfPQyd6la1dwJeTz2lgsz51QnblZFxraj0sD-Jkloe5jf4D=s839-no?authuser=0');
+		background-size: cover;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	#pic-miwata {
+		background-image: url('https://lh3.googleusercontent.com/E20urAFub3lbRAs6zr_lT1BQ_5N0Ua-awpCfFiDupE-wTTfX3reHr1izIAJE_Z7ADOTHaxQO1R6LJ_KjmC1rjOr6WPnaGriyPqpR76f9snEVDFkxkZItFwEwC5Ch_ptHOmhVb13exj0s2xapaKVeIC5_SV7mL_x1tod3v8_LxMsMdO2op5j_9ApfFKe0KCYA1VypU8sjU9ppPG2mIi6eav6rt--QvgjztGbt5s6ybnQvN03H4E9RBphPzq6DMQpHHYowhLIOwnEjnSC30r_gBsMf9Aho0FOgswv046wPTUA4x2QQFizlDlKlETUHBvf0vZH1SW-AdN_QM8dhjFDPRX8YvxX4wQvu8xJFQcYlQ774Ymf76Kvi5yEpEk-4JLVxaKhkKA3deswaEryZBotulAfuetUy9_8fiS6NloINKJiuUSMUenRn2zVhaatc4n8dkGjFrrnQ17_6khq5G9S59XXVTfu4KjhE79uU2EYkiGdoXdimOZ5sxX5dBGgZXlM4C_0KO9J2PfkNZNDeOVv2pfyu_wKEgf2PXk16RFmVeLu7dhkGSI5PTgBsrgce3rLh-yfPqDie-lZhR9igaMFJ69xFBdgHr8gldb5jU4S-yOyMxICFpOVrgKcHcGVmeFNG28Oz9VtheCr5TQ_ovqyQ4TpCTmsQetjBDHmGocq2xiiCV1wlpcJE7pd6ulmbOrNtmM87ObLZIPTnHQ7WiBzcx_0x8ghir_DNTIgnHfe6JhrUoCtHMQ4SX2GFEN0XXY9Mk1Ii5cUuSDekN-QRJJfB6yxlcIagnBL-PO2IJ0E_4Osmykj1MvMYm2t64psIG-pHt1zB2_FZPu4l-VA6j2yVdBKNvNsQXueAM5I8mx8ORBcvOsRQpuvgohEXkL49g-sTZa_zuA0m3ZGfcz7hfcDFc0ZNZqeDX4mzENSOeskD74s_ZtSq=s880-no?authuser=0');
+		background-size: cover;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	#pic-maruitatemono {
+		background-image: url('https://lh3.googleusercontent.com/5S_0TThg6wXSjcCCoyRTze6JnNhduhZGsNEEqCjJDVR1IRyu3NTzyyFnftS0sq3jy-cpFel1Z_DFI1QAGK0Ewu59NbqCK3KbKp6n4BaMYMvnyaOPFxA--0Mol0wLhdDKgRE72JlvcKA-m_NAPcpkvc0wZAbMIEPNX7eRnQRLPXNQ1eLqNvjkQJSePVCFsZdF1gBO7Erlut-i5M_JyQyOXwVM63D2ubSU2WMWJNCd9_zyfGrMdOsaR5gpSuuVFea8O-oy1m9TehRhPHgfjGE9EiW_uS0boMrl_gdQsYq1JDmnxwD_KOuuMWkOQp-Hp__H_s8r5M5o8bKjrPFWFZ407DERSMkGEobY5qdW8J15gMgIQRlf9jmmx_9qukBs9nAqNA4iraMV60i2JDmaolDJ4nZye9UyOn2m2VLoP1r04BPGZCj9vvEoaeI-7_Yp5tVDR29jqGuF22G0aXnG-xppEmMQYuOREQjqmPF-4wmvSrQjq4aSzQpr6u0uCHcIqiav5OesdEP9le3LyU1B1viTP-lPnew_T3dNL7Uta9kjkdjWYdzNfKyoP_HX-OvfJ8pskbrNNGJqfxbAty4Yzrlm3SNAfdTQcgl8iemQDEEe-Ql3Z5EKc9wf1S1QWpOL6i_CZp8ZxZQMVSF9qJWFTKnF1H-Om5ZtaM-jTloF-JM8sNjzyKKdwMKjVKZq1I_kJEtli-wrseLxjmzDnolb24i6KvUH0Fhmb0oZKmb-dLEQsladRgO2xBTvQFUNd8oya8uBb1c0e5GVuoCYaywyobx8lPWal2vlvS4Gi28b4Edh-ljxjXMgiCpszBEsOSSX6T0IY7BlJ-_bO5R31al4G1e26rUBFvGrlvRttpsTlDc2tUNspX9KQ4wIsuL_P5TIy0fgYOZtOhTzqEl4yMTf16rzcmQDIsKcA0JuUAqb2VGV7W-1uQ04=s880-no?authuser=0');
+		background-size: cover;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	
+	/* #pic-seven {
+		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEXbDtPLsh-ozO0o8HPn9jsRQKTblTWu5AHbN-ELWcYC8WJ7HKFyrd1V-xjBDFhLYAD46ysgACVtgbx2_pdXhd9t0yJEOnugKWRy9VjioaoY30JCTnMJPVL561kD1iKkJDqMWjeDrerS9nSUGLwmqwQt=s893-no?authuser=0');
+		background-size: cover;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		cursor: pointer;
+	} */
+
+	/* #pic-kamakura {
+		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEXbDtPLsh-ozO0o8HPn9jsRQKTblTWu5AHbN-ELWcYC8WJ7HKFyrd1V-xjBDFhLYAD46ysgACVtgbx2_pdXhd9t0yJEOnugKWRy9VjioaoY30JCTnMJPVL561kD1iKkJDqMWjeDrerS9nSUGLwmqwQt=s893-no?authuser=0');
+		background-size: cover;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		cursor: pointer;
+	} */
+
+	#pic-sagawa {
+		background-image: url('https://lh3.googleusercontent.com/L4hhkcjnnM_eakaz-R0y0kRqrDrrSjVAS0_YquZZK0127SYEgjxN9ubX9UqhHRUSg78O2xwVaMN8q8fz6-vfc_0TJVz625fqLLs4P10Zt7ZTol-yNaU-loJqcJUEFCQxix-fPqS-MdESgo5YcmHmTF5ZOzzUJZqxgeRHiSJ9ZS0rxSesbi_3v_ZwU2xARJyUBD1tI6chWksGA1NOCzDe12xDICPkpZ-1jGFLwTrulwEaWPq5aLAvGLXQIpQyxQoXRoipfYciw_WppuRzBPAa5EYNz2Ky6sFMfJ5nR8cpjQiQn-dG1VFQG4-_BI1s5cr-zUqmpoz6k5mMHghUrOdOAe75a2u6uNv3V329OljD_qjIeIEN4V-oheEKTtOQiZC2qS6nnT4ULBflCDqYMpfDCa0s7XBoKMiegPvHWnanQi1X2RfkAGya75UwLlKqjt-MuvTBqSFHJcp3NnfzOM5SFxZ5js0593LkpcMDohfRSvF87H__Knx18w_cVqyDo85QKXCvjlfMdKCBwAV4BeRNvCiJo8q1Eb8xQH4bjghJSZES5jCFqXPZA9ea7FyTLT5ohAxMEO8Eq4wE1aYKkmzA7vNYgH_XxSaMo2Oi6nc08mEn9Rn29qzCBSLRRsmqhs4BXfoIAxUSyvZBlJ70e8t6Z1UK45A2Vur4z8Az8MwNOQbkTjUE0mGt1f-Ia9gVWlN5KYo2ePyTv1NgnWnvk9OZDLHi36m2-z2oTgaM57NtwTHdcnhztI8bzXp_OMERKXqWVi15TObI_wQB8_xvCzrmHam1VcIqPcHD9trRQ7IQGp3jIsVwZsKFieRFVfKSg9KOghDYE6a4Cmaub8TcJZZ4K4JagO3UHecdG0dLe_WWJ-W12IwFbxWC82Uu6lvvaI15dT13XBB-fHNbx3H96U08ViZCQvLSyf8uB7AH6OKP0LvJv5RN=s880-no?authuser=0');
+		background-size: cover;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	#pic-kirinen {
+		background-image: url('https://lh3.googleusercontent.com/MO77EbuSn3tAgg-F_GP_O3-YZ0JBm6B4iTqeZ9df0TTPnBwkHPYZlpbASg2gNBU6CzWqC7ljnmqL-lqFuqX-EcVzPobzDpmB6bZtUwMYslIsYwSzKhZIorLICpH_5cPbdQG2DRZiIMtzq6X1cRYPNhykoct5-YhM59T3UskbBOFTEaFDALJcF7NRmMjsTijX6oLZEwWeILCpIiIoz8tzO7hJHXtcxGXJpze00IUDgCYJVd7VvklYY19gdC2cLMAdPZL01oFO9V25asHcufI7stfL9w7J4zJYUU6Um8_h-P-1rSNhzfrYAuxyP_fA7aVxrmzgKK9dWu5-Tr6XZXk8uMeZaeucb7uSSJqX5v7JHGWzjQw6bIYDFdm69hfTZu2OYWQ7v8qdVz_EspAvv0604OdhYP0mD4ozwoBacGqE2DDJR4xBMjPXfXI0NsF2m2QVLv5_xhtyLEMR6jt5p8wEst36wzADnSmZKzaKT8K6TbEVp3x2OmUBfTTPodgCLIUjLOcpadkXCU3W-fNGxulq_tbb4MaEVuYhhyqryLIWWk757HXQlyTuToSUPL5aG1YCGJhe3vcTLdxCAMcJVottKxv-UFrlcD9YFYuhUHsd0R4jTLBYat1mGVpNA1-5EyW-1hFL73A0ZwOupMMG9kqkgC1YUA7GbpL1o35_zxAtWMrOTr_6s8cSexBkCkF146D74p5rTHQ411euBl_yHxFtlh_Ew0VTFgfzhnGc9xSqS6bA9IDQG-SYxVCsCqUyRBMSM3n3MvAYtVbDFAPwmxO4sRLrjnl4ERSG_99AWpYzV4AxHC83T4dnKd1EoUeqTlSWics1mneXmqpn5_bFkkn2JvNknZBrgj_k8fqwhvpCskPZJXbS485iCxj_I1FFZy4t6Nl-nzCtGBZmomz4AH05hFuQY4ezrpynEZ6wk7P_jhoML1ev=s880-no?authuser=0');
+		background-size: cover;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	
+	#pic-hosei {
+		background-image: url('https://lh3.googleusercontent.com/KiemxrfiKUn4oaNhU6x_RpzwGGI7Cx2Rw-wWkZULSjBeFKthFRW--q7_2GhT8A7z5mJ4Ye0f4iLOqdCFE5QsAb5lFtMQI9FPtHvgf0nbfoO8Y2kKsSny3m4G2jAgq3S0jVtQ4PfYixgJ5Ul7vZc-o4IlIx8Kpjq-ywmUS184BwlxuxSMW6fimdqNqHi9RTAHqHqGm3eGIr-q-zJIchsDivyqE4zU5i7lvqSZp3PuM0ddx2nWrMmzjqFxWRRqg4cgkgf7Rj_v23l3Y7qWZ3TCdOOO73FvrBigyCeD5fHM-Xp7sZzsyTFb5MtylOlnPWjf-LdUdiLK-AQiN10JqbZke3o4-s0jzWaS8C9T5XuUUivw5Ai68dQKgjtJPaB5UWTaFH2ADGgGiHZdJKSoEmTNVVq4D8JFrFMGTYN7Yg_CcsZdh8ro-NCmUSoNHL1SGEnynxdIlA3CYQrm1TY1jjnvGeOFAq8p5wvSA8e0cJfgLERSBYfOGIVCnEM2orQe280rYNYKePpnb6veHtdEUhIbP1G8lM0Sdts9tng7_WMM_byM9ZeBhuLVLtLeZMHZQ7qWJhxrwrkv2TOofCUSmILqbTP2jP9gaBwRKU_U3DobTtdri_0McG6qaLZ_MUe825Ataz5T21L2W8-GoEh4on6usSMRVDJyZ05uRKNzhC9vZO63DVHHdvp2Gf_nICUg6S9jJCgZXg7BGuUshv9nRXzMq_mCrBy-oi7TloSINQ4xNdp69AzJJW19F86aZHmvZCioSfK1r7vmUDupR_ZLlToq6mId--Y2wlQb-eTazpIwTi6k4uMhSps7jYp373Ta0AXHq7Y3_PYNLyUS5Jtq2ZFLYfrqMuWnOXs1BkvxjJcFXu8PZYiy_UR90G45Dxd9QlNI3tUCSTjzMzgG0VLwJG8lxRzVfRV7dQa1R5qlpJaT2-jsQRbh=s828-no?authuser=0');
+		background-size: cover;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	#pic-start {
+		background-image: url('https://lh3.googleusercontent.com/geo1dPmXs0OAKWk6clZGlVpt8PE0gRTlV-3XBLSUtMmkfqDkCF5c3kYYKfoS3oC2-S37gUjeusANdIfqtBE9j1R2x88RH7xjKIRf5401PGTBMMQ-4k83K-UYS8vjBgz3pzEKpaVoATkOgjV2AGkBPW0lNEK9NdYiVE5UOuStvoviq5W6YuuMrSu5hfbTEsPN0PTZ15HQtzIUtGtOLgaUBCbB3vMyPQpeO_hRTtglDq6xJev17ENSfYcTPHj9fx3O36h6ZPYnuS7XhK70bFot2lZWLA_bUPwOOm41riWVMDA2y7cxi9xUOUWZ0VW7S1xwkjzZjrSheZtzgGTQUxMIfb8FiFUKkWhkvPoXN_avV3XWND1Wt15vZMkr6rPVtfHrsWcyOV2HEO9tJdsINss6LhO88sPVCR_6RKU0UapeBKYYgPfdRSFAEEa95F-BH01_h0s8LkxJ1R25Tlj3-rBJ2_JzIQ8wNaPcgD1LSUvuHS30ZWHfdB9ALppuHBj6lDT6pra3SRndS5ys-yp8bk_f2fn-zAxQ0om1OR8tZyRACoBTEwMvV-QjwjFJKnzCmB6Mmhkd2EyteOjTYVIWXE3Hj94ENgsJPzrCvcfUNbkDE0uRDhc4Bmg7NGe_bonpIgCiFoiQXMql8uL-7Zio-oPn1gSEJ_U91dKqNuwElSKto5lZL2-Pj5Rsa4HOOi0JHgDhxqgRixKgH82K_3L0ISLRIYvc-iO_cUovDdipbS3uWI4vY45Y5txAzlN3QlOSz3Xanrf7Quw0zXIzYMdmjU5yDi1wXYafaoUxJ93calkNzoyjEc8wITBKDV8aUjvEERtZqac6a6VpNtZ2ljKVdmG-d11CNEhaTjvfso1Es9CkZIpcPg_o0eyrrklU5VXzPuxfOIdFF5bj-J5iAmwAwseAjDeSkdYLxnq8fr1tXz8PvcRSPXuA=s628-no?authuser=0');
 		background-size: cover;
 		width: 30px;
 		height: 30px;
@@ -240,14 +248,15 @@ body { margin: 0; padding: 0; }
 		cursor: pointer;
 	}
 
-    #marker-gosaro {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEXE-Fnb0umi5gYeeqtzK1GRNgF7cxWCuQgSt9hcXTfX6srAOCk1goF3lykZXCoFHhcPzjZEfnGXa1kU1v3b7YdTQOFajh5plXGT9Z7cF6NdVBytMFMooQ8qRfcCkUnFJgeDaNspMdAdz07TYGFN5hv_=s893-no?authuser=0');
+	#pic-goal {
+		background-image: url('https://lh3.googleusercontent.com/geo1dPmXs0OAKWk6clZGlVpt8PE0gRTlV-3XBLSUtMmkfqDkCF5c3kYYKfoS3oC2-S37gUjeusANdIfqtBE9j1R2x88RH7xjKIRf5401PGTBMMQ-4k83K-UYS8vjBgz3pzEKpaVoATkOgjV2AGkBPW0lNEK9NdYiVE5UOuStvoviq5W6YuuMrSu5hfbTEsPN0PTZ15HQtzIUtGtOLgaUBCbB3vMyPQpeO_hRTtglDq6xJev17ENSfYcTPHj9fx3O36h6ZPYnuS7XhK70bFot2lZWLA_bUPwOOm41riWVMDA2y7cxi9xUOUWZ0VW7S1xwkjzZjrSheZtzgGTQUxMIfb8FiFUKkWhkvPoXN_avV3XWND1Wt15vZMkr6rPVtfHrsWcyOV2HEO9tJdsINss6LhO88sPVCR_6RKU0UapeBKYYgPfdRSFAEEa95F-BH01_h0s8LkxJ1R25Tlj3-rBJ2_JzIQ8wNaPcgD1LSUvuHS30ZWHfdB9ALppuHBj6lDT6pra3SRndS5ys-yp8bk_f2fn-zAxQ0om1OR8tZyRACoBTEwMvV-QjwjFJKnzCmB6Mmhkd2EyteOjTYVIWXE3Hj94ENgsJPzrCvcfUNbkDE0uRDhc4Bmg7NGe_bonpIgCiFoiQXMql8uL-7Zio-oPn1gSEJ_U91dKqNuwElSKto5lZL2-Pj5Rsa4HOOi0JHgDhxqgRixKgH82K_3L0ISLRIYvc-iO_cUovDdipbS3uWI4vY45Y5txAzlN3QlOSz3Xanrf7Quw0zXIzYMdmjU5yDi1wXYafaoUxJ93calkNzoyjEc8wITBKDV8aUjvEERtZqac6a6VpNtZ2ljKVdmG-d11CNEhaTjvfso1Es9CkZIpcPg_o0eyrrklU5VXzPuxfOIdFF5bj-J5iAmwAwseAjDeSkdYLxnq8fr1tXz8PvcRSPXuA=s628-no?authuser=0');
 		background-size: cover;
 		width: 30px;
 		height: 30px;
 		border-radius: 50%;
 		cursor: pointer;
 	}
+	
 
 	.mapboxgl-popup {
 		max-width: 200px;
@@ -256,10 +265,12 @@ body { margin: 0; padding: 0; }
 
 	.text-image {
 		position: relative;
+		display: flex;
 		width: 330px;
-		height: 300px;
+		height: 150px;
 		top: 20px;
 		left: 20px;
+		touch-action: none;
 	}
 	.text-image img {
 		position: absolute;
@@ -271,65 +282,51 @@ body { margin: 0; padding: 0; }
 		left: 0;
 	}
 	.text-image .picture {
-		width: 150px;
-		height: 150px;
-		top: 15px;
+		width: 75px;
+		height: 75px;
+		top: 12px;
 		left: 15px;
 	}
 	.text-image p {
 		position: absolute;
-		top: 18%;
-		left: 53%;
+		top: 0%;
+		left: 30%;
 		font-size: 20px;
 		color: #359495;
 	}
 
 </style>
 <div id="map"></div>
-<div class="text-image">
-	<img src="https://lh3.googleusercontent.com/pw/AL9nZEUjJ9lg4bnpOQAMpSP62NaJlL8taAAoDXZKbvX8GveIm2sWNu6P__ET8PcHl64KcFS3mDpdi0Rux_uwywWePYiFkcop21tm2jt1EGwIUy8l41v0F-7nMTvVKctuInxRT-asTg4aBLcDhKjGTGTLbt2B=w1648-h893-no?authuser=0" alt="" class="background">
-	<img id="picture" src="https://lh3.googleusercontent.com/pw/AL9nZEX4ICnem_YvB5XOj7mIz4DfB38U6-5QJc9VdUYKomNukbP1Fiqxhp6PbxT_IzNtWdq_Sc41d4PigpIxEVbb5ojWaPM4J6ie2WGEVKZ3twnpFr8jHwK8EsYd0OFpc_Gt0WB06kghkgxXZ3OCpSorTuhf=s893-no?authuser=0" alt="" class="picture">
-	<p id="target">目印</p>
+<div class = "gui">
+	<div class="text-image">
+		<img src="https://lh3.googleusercontent.com/pw/AL9nZEXZw-MCkCUNKB542BP9E-OkjLnHqNh6zMVD2r_JI6GQDLSnKVzWzOStlBNVwp1LWoYwqd6aU_CdWTCt2hrHEAKfvqzdO3EzLmdik02CJ2YasCCtY6qdZQVYsLPjm9zp4kApphK4w3qRJQg22WRZ4ycd=w1777-h535-no?authuser=0" alt="" class="background">
+		<img id="picture" src="https://lh3.googleusercontent.com/pw/AL9nZEX4ICnem_YvB5XOj7mIz4DfB38U6-5QJc9VdUYKomNukbP1Fiqxhp6PbxT_IzNtWdq_Sc41d4PigpIxEVbb5ojWaPM4J6ie2WGEVKZ3twnpFr8jHwK8EsYd0OFpc_Gt0WB06kghkgxXZ3OCpSorTuhf=s893-no?authuser=0" alt="" class="picture">
+		<p id="target">目印</p>
+	</div>
+	<br>
+	<!-- <div class = "btns"> -->
+		<button id="fly3">出発地点</button>
+		<button id="fly2">◃前の目印</button>
+		<button id="fly">次の目印▹</button>
+	<!-- </div> -->
 </div>
-<br>
-<button id="fly3">出発地点</button>
-<button id="fly2">◃前の目印</button>
-<button id="fly">次の目印▹</button>
 <!-- <button id="zoomto" class="btn-control">経路全体表示</button> -->
 <script>
-
-    // const aaa = [139.6220376, 35.8788746];
-    // const bbb = [139.6181326, 35.8901640];
-    // const ccc = [139.6212518, 35.8910195];
-
-    const tamachi = [139.737018, 35.69555];
-	const kaidan = [139.737705, 35.696267];
-	const gosaro = [139.739961, 35.694756];
-    const dentist = [139.73670662292648, 35.69573591349243];
-
-    const a = [139.7378087, 35.6964356];
-    const b = [139.7374621, 35.6967884];
-    const c = [139.7378161, 35.6969210];
-    const d = [139.7373088, 35.6978996];
-    const e = [139.7377293, 35.6980499];
-    const f = [139.7375747, 35.6983696];
-    const g = [139.7379744, 35.6986767];
-    const h = [139.7374768, 35.6997721];
-    const park = [139.7370625810891, 35.69943941120695];
-
     const start = [139.74112377737234, 35.69636510466142];
-    const toilet = [139.74116104881685, 35.69663564404346];
-    const hoseiSotobori = [139.741582886108235, 35.696160679872115];
-    const hoseiSeven = [139.7413672803984, 35.69638322082939];
-    const shingouGosaro = [139.73995035816853, 35.69482376374543];
-    const miwatagakuen = [139.74010738124184, 35.69463038779962];
-    const whitehouse = [139.73986586858447, 35.69460702069708];
+    const toilet = [139.74111711364947, 35.69669858698301];
+    //const hoseiSotobori = [139.741582886108235, 35.696160679872115];
+    const hoseiSeven = [ 139.74155494313217, 35.69630172083079];
+    const shingouGosaro = [139.73993463644314, 35.694717520271546];
+    const miwatagakuen = [139.74034604353983, 35.694556624688055];
+    const whitehouse = [ 139.73985339034758, 35.69442155295701];
+	const hosei = [139.74103159679746, 35.692790739709274];
+	const hoseiRoad = [139.7407404964473, 35.692819837448674];
     const kamakurapasta = [139.74104760091484, 35.69238319604894];
     const kamakurapastaShingou = [139.7408722716049, 35.692538249771935];
     const kamakurapastaKousaten = [139.7408897670253, 35.69249487177801];
-    const sagawa = [139.7411442386589, 35.692142894015745];
+    const sagawa = [139.7412292702338, 35.69228443883708];
     const sagawaJuji = [139.7410887006505, 35.69204999026486];
-    const kirinen = [139.74229288669287, 35.692361033522275];
+    const kirinen = [139.7425049272437, 35.69235023769934 ];
     const kirinenJuji = [139.74221190299485, 35.69239353315152];
     const tomare = [139.74211762727643, 35.692377990902834];
     const amiami = [139.74246562497012, 35.6920117384243];
@@ -347,6 +344,14 @@ body { margin: 0; padding: 0; }
     const urlTsukiatari = ''
     const urlSeven = ''
 
+	const straight = 'https://lh3.googleusercontent.com/pw/AL9nZEV_Lg-u24FtCsI8IA8GQTRNvTcXwVvmPKWQQRIrwgMYbAtw0hGPAVEvNaZIDEPIazbKU6F29CLt30AwuwHs4-l30ea8NAouVTCb72o273qXmCGk8oVU7T4Gs1z9St-hHv6HYTwC5onhNWqe0Hrp_34N=s893-no?authuser=0'
+	const gosaroLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEXE-Fnb0umi5gYeeqtzK1GRNgF7cxWCuQgSt9hcXTfX6srAOCk1goF3lykZXCoFHhcPzjZEfnGXa1kU1v3b7YdTQOFajh5plXGT9Z7cF6NdVBytMFMooQ8qRfcCkUnFJgeDaNspMdAdz07TYGFN5hv_=s893-no?authuser=0'
+	const crossLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEV2XhJA6xfRO4fz0B1-g2LvyekFxz0PoGhPV3O2sUTl3BTl1wEPn2KQj6TNWRyOJo31nSovFNU3RZJcNKXIFdwfw3xsOspdKsAPagHxzrsRRAEiTx3OG-zCWUa8AkGDLKu5aH-jOYUWVwk_z6gx8W_G=s625-no?authuser=0'
+	const crossRight = 'https://lh3.googleusercontent.com/pw/AL9nZEW0cLgN1_i0AlDnok19Z3plBJOPTJRnHUu0xPlVKAwUKELcWUX-eJsiNK2Xievj5CNuqZzPR1v5Lxjcp5Uv7wkQGftoKi5LO96p6mQ9HMHj20hvRZu9ZxxDEhX6Z-3C-TkVtkA4zjpKKNLYIsN4-KHt=s893-no?authuser=0'
+	const nextLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEWt_UDbxQ621FKtzHfEvtlA0dRcniUA7_RYL3IgbUpDYA6KexTcp7z5LXfqoPjap25e90AgPz82YQS8Rsbjp0ODMYnjU0P6B7Q7tRcFMMNQsUcD8zKaLOs9svjE-Uw0B8lrZRoIHFjjrRHJQ8JHJ34v=s625-no?authuser=0'
+	//const nextRight = ''
+	//const tLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEXkm7dAj-XRje9ni5_NkIHTcj9tvPY6fmwIuka6rugArzGtI-SPFhy3k9jS1BPlRaz-WqaleUqAsqLgJIEat8FP1P92UUgj_-2rlhBpOWvxjM7Ct8wFTY2aeWnNT2zWAYN8px8c7uHf8ZnCLWOEF6ls=s625-no?authuser=0'
+	const tRight = 'https://lh3.googleusercontent.com/pw/AL9nZEWzwcMZYqQ6Yd0afBo0pdUbIKJKHy32edEJ8VKfqxog18i-raz2lk7SUau028GdfmLckG3k4OrMdaWCK3ZjyFfxVTbG950NYXWHWb_LBHuKn20hqrLtDNriu-SjcvdoprFmGBrhULFT3uLcg0tbeyFu=s625-no?authuser=0'
 
 	mapboxgl.accessToken = 'pk.eyJ1IjoiaW5vdWVrb3N1a2UiLCJhIjoiY2w1dXVjMXR0MDBoZTNjcHNneDBoY2p1ayJ9.QOyj-eLyQbQZ_2A2502t1A';
     
@@ -361,7 +366,7 @@ body { margin: 0; padding: 0; }
 					'type': 'LineString',
 					'properties': {},
 					'coordinates': [
-						[ 139.740966899999989, 35.696375, 0.0 ], [ 139.74101, 35.69635, 0.0 ], [ 139.7410104, 35.6963521, 0.0 ], [ 139.7409, 35.69622, 0.0 ], [ 139.74083, 35.69614, 0.0 ], [ 139.74072, 35.69602, 0.0 ], [ 139.74063, 35.69592, 0.0 ], [ 139.74071, 35.69588, 0.0 ], [ 139.74068, 35.69585, 0.0 ], [ 139.74064, 35.6958, 0.0 ], [ 139.74054, 35.69566, 0.0 ], [ 139.74045, 35.69552, 0.0 ], [ 139.74041, 35.69544, 0.0 ], [ 139.74037, 35.69537, 0.0 ], [ 139.74031, 35.69527, 0.0 ], [ 139.74029, 35.69524, 0.0 ], [ 139.74013, 35.69499, 0.0 ], [ 139.74006, 35.69492, 0.0 ], [ 139.73998, 35.69485, 0.0 ], [ 139.73998, 35.69484, 0.0 ], [ 139.73997, 35.69481, 0.0 ], [ 139.73997, 35.6948, 0.0 ], [ 139.7399694, 35.6947955, 0.0 ], [ 139.73999, 35.69476, 0.0 ], [ 139.73999, 35.69475, 0.0 ], [ 139.74, 35.69474, 0.0 ], [ 139.74001, 35.69473, 0.0 ], [ 139.74003, 35.6947, 0.0 ], [ 139.7400275, 35.6947047, 0.0 ], [ 139.74005, 35.69466, 0.0 ], [ 139.74004, 35.69466, 0.0 ], [ 139.74024, 35.69419, 0.0 ], [ 139.7403, 35.69403, 0.0 ], [ 139.74033, 35.69397, 0.0 ], [ 139.74047, 35.69362, 0.0 ], [ 139.74047, 35.69363, 0.0 ], [ 139.7405, 35.69357, 0.0 ], [ 139.74049, 35.69357, 0.0 ], [ 139.74054, 35.69347, 0.0 ], [ 139.74058, 35.69337, 0.0 ], [ 139.7406, 35.6933, 0.0 ], [ 139.74068, 35.69311, 0.0 ], [ 139.7407, 35.69307, 0.0 ], [ 139.74075, 35.69295, 0.0 ], [ 139.74077, 35.69288, 0.0 ], [ 139.74084, 35.69273, 0.0 ], [ 139.74086, 35.69267, 0.0 ], [ 139.74089, 35.69261, 0.0 ], [ 139.74096, 35.69263, 0.0 ], [ 139.74097, 35.69261, 0.0 ], [ 139.74105, 35.69245, 0.0 ], [ 139.74106, 35.69243, 0.0 ], [ 139.74097, 35.6924, 0.0 ], [ 139.741, 35.69234, 0.0 ], [ 139.74104, 35.69225, 0.0 ], [ 139.74105, 35.69222, 0.0 ], [ 139.74108, 35.69217, 0.0 ], [ 139.74112, 35.69208, 0.0 ], [ 139.741116, 35.6920843, 0.0 ], [ 139.74149, 35.6922, 0.0 ], [ 139.74162, 35.69224, 0.0 ], [ 139.74216, 35.6924, 0.0 ], [ 139.7421626, 35.6924014, 0.0 ], [ 139.74219, 35.69235, 0.0 ], [ 139.74228, 35.69214, 0.0 ], [ 139.7423, 35.69209, 0.0 ], [ 139.74238, 35.69211, 0.0 ], [ 139.74244, 35.69197, 0.0 ], [ 139.7424398, 35.6919721, 0.0 ], [ 139.74283, 35.69209, 0.0 ], [ 139.74302, 35.69215, 0.0 ], [ 139.74331, 35.69223, 0.0 ], [ 139.74336, 35.69225, 0.0 ], [ 139.7433629, 35.6922469, 0.0 ], [ 139.74337, 35.69223, 0.0 ], [ 139.74341, 35.69212, 0.0 ], [ 139.743414, 35.6921173, 0.0 ], [ 139.74355, 35.69216, 0.0 ], [ 139.7435534, 35.6921591, 0.0 ]
+						 [ 139.7410435, 35.6963255, 0.0 ], [ 139.74071, 35.69588, 0.0 ], [ 139.74068, 35.69585, 0.0 ], [ 139.74064, 35.6958, 0.0 ], [ 139.74054, 35.69566, 0.0 ], [ 139.74045, 35.69552, 0.0 ], [ 139.74041, 35.69544, 0.0 ], [ 139.74037, 35.69537, 0.0 ], [ 139.74031, 35.69527, 0.0 ], [ 139.74029, 35.69524, 0.0 ], [ 139.74013, 35.69499, 0.0 ], [ 139.74006, 35.69492, 0.0 ], [ 139.73998, 35.69485, 0.0 ], [ 139.73998, 35.69484, 0.0 ], [ 139.73997, 35.69481, 0.0 ], [ 139.73997, 35.6948, 0.0 ], [ 139.7399694, 35.6947955, 0.0 ], [ 139.73999, 35.69476, 0.0 ], [ 139.73999, 35.69475, 0.0 ], [ 139.74, 35.69474, 0.0 ], [ 139.74001, 35.69473, 0.0 ], [ 139.74003, 35.6947, 0.0 ], [ 139.7400275, 35.6947047, 0.0 ], [ 139.74005, 35.69466, 0.0 ], [ 139.74004, 35.69466, 0.0 ], [ 139.74024, 35.69419, 0.0 ], [ 139.7403, 35.69403, 0.0 ], [ 139.74033, 35.69397, 0.0 ], [ 139.74047, 35.69362, 0.0 ], [ 139.74047, 35.69363, 0.0 ], [ 139.7405, 35.69357, 0.0 ], [ 139.74049, 35.69357, 0.0 ], [ 139.74054, 35.69347, 0.0 ], [ 139.74058, 35.69337, 0.0 ], [ 139.7406, 35.6933, 0.0 ], [ 139.74068, 35.69311, 0.0 ], [ 139.7407, 35.69307, 0.0 ], [ 139.74075, 35.69295, 0.0 ], [ 139.74077, 35.69288, 0.0 ], [ 139.74084, 35.69273, 0.0 ], [ 139.74086, 35.69267, 0.0 ], [ 139.74089, 35.69261, 0.0 ], [ 139.74097, 35.6924, 0.0 ], [ 139.741, 35.69234, 0.0 ], [ 139.74104, 35.69225, 0.0 ], [ 139.74105, 35.69222, 0.0 ], [ 139.74108, 35.69217, 0.0 ], [ 139.74112, 35.69208, 0.0 ], [ 139.741116, 35.6920843, 0.0 ], [ 139.74149, 35.6922, 0.0 ], [ 139.74162, 35.69224, 0.0 ], [ 139.74216, 35.6924, 0.0 ], [ 139.7421626, 35.6924014, 0.0 ], [ 139.74219, 35.69235, 0.0 ], [ 139.74228, 35.69214, 0.0 ], [ 139.74235189, 35.69194276, 0.0 ], [ 139.74283, 35.69209, 0.0 ], [ 139.74302, 35.69215, 0.0 ], [ 139.74331, 35.69223, 0.0 ], [ 139.74336, 35.69225, 0.0 ], [ 139.7433629, 35.6922469, 0.0 ], [ 139.74337, 35.69223, 0.0 ], [ 139.74341, 35.69212, 0.0 ], [ 139.743414, 35.6921173, 0.0 ], [ 139.74355, 35.69216, 0.0 ], [ 139.7435534, 35.6921591, 0.0 ]
 					]
 				}
 			}
@@ -371,7 +376,7 @@ body { margin: 0; padding: 0; }
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/inouekosuke/cl96xiif7000115qliw1b7tfr',
-        center: tamachi,
+        center: start,
         zoom: 18,
         padding: 40,
 		pitch: 20,
@@ -436,8 +441,8 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n + 1,
-			document.getElementById('target').textContent = '出発'
-			document.getElementById('picture').src = urlHoseiSotobori
+			document.getElementById('target').textContent = '出発する　　　　　　　大学に向かって左'
+			document.getElementById('picture').src = straight
         }
         else if(n == 1){
             map.flyTo({
@@ -449,12 +454,12 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n + 1,
-			document.getElementById('target').textContent = '信号・五差路'
-            document.getElementById('picture').src = urlShingouGosaro
+			document.getElementById('target').textContent = '信号・五差路　　　　　斜め左'
+            document.getElementById('picture').src = gosaroLeft
         }
         else if(n == 2){
             map.flyTo({
-            center:kamakurapastaKousaten,
+            center:hoseiRoad,
             zoom: 18,
             padding: 40,
 		    pitch: 0,
@@ -462,8 +467,8 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n + 1
-			document.getElementById('target').textContent = '鎌倉パスタ通過'
-            document.getElementById('picture').src = urlKamakurapasta
+			document.getElementById('target').textContent = '法政大学を目指す　　　直進'
+            document.getElementById('picture').src = straight
         }
         else if(n == 3){
             map.flyTo({
@@ -475,8 +480,8 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n + 1
-			document.getElementById('target').textContent = '佐川急便 左'
-            document.getElementById('picture').src = urlSagawa
+			document.getElementById('target').textContent = '佐川急便　　　　　　　左'
+            document.getElementById('picture').src = crossLeft
         }
         else if(n == 4){
             map.flyTo({
@@ -488,8 +493,8 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n + 1
-			document.getElementById('target').textContent = '麒麟宴 右'
-            document.getElementById('picture').src = urlKirinen
+			document.getElementById('target').textContent = '麒麟宴　　　　　　　　右'
+            document.getElementById('picture').src = crossRight
         }
         else if(n == 5){
             map.flyTo({
@@ -501,8 +506,8 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n + 1
-			document.getElementById('target').textContent = '特徴的な建物 左 路地へ'
-            document.getElementById('picture').src = urlAmiami
+			document.getElementById('target').textContent = '特徴的な建物　　　　　　左　路地へ'
+            document.getElementById('picture').src = nextLeft
         }
         else if(n == 6){
             map.flyTo({
@@ -514,8 +519,8 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n + 1
-			document.getElementById('target').textContent = '突き当り 右'
-            document.getElementById('picture').src = urlTsukiatari
+			document.getElementById('target').textContent = '突き当り　　　　　　　右'
+            document.getElementById('picture').src = tRight
         }
         else if(n == 7){
             map.flyTo({
@@ -527,7 +532,7 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n + 1
-			document.getElementById('target').textContent = 'セブンイレブン 到着'
+			document.getElementById('target').textContent = 'セブンイレブン　到着'
             document.getElementById('picture').src = urlSeven
         }
     });
@@ -543,8 +548,8 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n - 1
-			document.getElementById('target').textContent = '突き当り 右'
-            document.getElementById('picture').src = urlTsukiatari
+			document.getElementById('target').textContent = '突き当り　　　　　　　右'
+            document.getElementById('picture').src = tRight
         }
         else if(n == 7){
             map.flyTo({
@@ -556,8 +561,8 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n - 1
-			document.getElementById('target').textContent = '特徴的な建物 左 路地へ'
-            document.getElementById('picture').src = urlAmiami
+			document.getElementById('target').textContent = '特徴的な建物　　　　　　左　路地へ'
+            document.getElementById('picture').src = nextLeft
         }
         else if(n == 6){
             map.flyTo({
@@ -569,8 +574,8 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n - 1
-			document.getElementById('target').textContent = '麒麟宴 右'
-            document.getElementById('picture').src = urlKirinen
+			document.getElementById('target').textContent = '麒麟宴　　　　　　　　右'
+            document.getElementById('picture').src = crossRight
         }
         else if(n == 5){
             map.flyTo({
@@ -582,12 +587,12 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n - 1
-			document.getElementById('target').textContent = '佐川急便 左'
-            document.getElementById('picture').src = urlSagawa
+			document.getElementById('target').textContent = '佐川急便　　　　　　　左'
+            document.getElementById('picture').src = crossLeft
         }
         else if(n == 4){
             map.flyTo({
-            center:kamakurapastaKousaten,
+            center:hoseiRoad,
             zoom: 18,
             padding: 40,
 		    pitch: 0,
@@ -595,8 +600,8 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n - 1
-			document.getElementById('target').textContent = '鎌倉バスタ通過'
-            document.getElementById('picture').src = urlKamakurapasta
+			document.getElementById('target').textContent = '法政大学を目指す　　　直進'
+            document.getElementById('picture').src = straight
         }
         else if(n == 3){
             map.flyTo({
@@ -608,8 +613,8 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n - 1
-			document.getElementById('target').textContent = '信号・五差路'
-            document.getElementById('picture').src = urlShingouGosaro
+			document.getElementById('target').textContent = '信号・五差路　　　　　斜め左'
+            document.getElementById('picture').src = gosaroLeft
         }
         else if(n == 2){
             map.flyTo({
@@ -621,8 +626,8 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = n - 1
-			document.getElementById('target').textContent = '出発'
-			document.getElementById('picture').src = urlHoseiSotobori
+			document.getElementById('target').textContent = '出発する　　　　　　　大学に向かって左'
+			document.getElementById('picture').src = straight
         }
         else if(n == 1){
             map.flyTo({
@@ -633,8 +638,8 @@ body { margin: 0; padding: 0; }
 		    bearing: 100,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
-			document.getElementById('target').textContent = '出発'
-			document.getElementById('picture').src = urlHoseiSotobori
+			document.getElementById('target').textContent = '出発する　　　　　　　大学に向かって左'
+			document.getElementById('picture').src = straight
         }
     });
 
@@ -648,192 +653,194 @@ body { margin: 0; padding: 0; }
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
             n = 1
-			document.getElementById('target').textContent = '出発'
-			document.getElementById('picture').src = urlHoseiSotobori
+			document.getElementById('target').textContent = '出発する　　　　　　　大学に向かって左'
+			document.getElementById('picture').src = straight
     });
 
 
     // 画像アイコンと説明
-	// const popup1 = new mapboxgl.Popup({ offset: 25 }).setText(
-	// 	'法政大学外濠校舎'
-	// );
-	// const el1 = document.createElement('div');
-	// el1.id = 'marker-school';
-	// new mapboxgl.Marker(el1)
-	// .setLngLat(hoseiSotobori)
-	// .setPopup(popup1)
-	// .addTo(map);
-
-	const popup2 = new mapboxgl.Popup({ offset: 25 }).setText(
+	const popup1 = new mapboxgl.Popup({ offset: 75 }).setText(
 		'トイレ'
 	);
-	const el2 = document.createElement('div');
-	el2.id = 'marker-toilet';
-	new mapboxgl.Marker(el2)
+	const el1 = document.createElement('div');
+	el1.id = 'pic-toilet';
+	new mapboxgl.Marker(el1)
 	.setLngLat(toilet)
+	.setPopup(popup1)
+	.addTo(map);
+
+	const popup2 = new mapboxgl.Popup({ offset: 75 }).setText(
+		'大学内セブンイレブン'
+	);
+	const el2 = document.createElement('div');
+	el2.id = 'pic-hoseiseven';
+	new mapboxgl.Marker(el2)
+	.setLngLat(hoseiSeven)
 	.setPopup(popup2)
 	.addTo(map);
 
 	const popup3 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'セブンイレブン'
+		'三輪田学園'
 	);
 	const el3 = document.createElement('div');
-	el3.id = 'marker-convenience-store';
+	el3.id = 'pic-miwata';
 	new mapboxgl.Marker(el3)
-	.setLngLat(hoseiSeven)
+	.setLngLat(miwatagakuen)
 	.setPopup(popup3)
 	.addTo(map);
 
 	const popup4 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'五差路・信号'
+		'丸い建物'
 	);
 	const el4 = document.createElement('div');
-	el4.id = 'marker-gosaro';
+	el4.id = 'pic-maruitatemono';
 	new mapboxgl.Marker(el4)
-	.setLngLat(gosaro)
+	.setLngLat(whitehouse)
 	.setPopup(popup4)
 	.addTo(map);
 
-    const popup5 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'角の丸い家'
+    const popup5 = new mapboxgl.Popup({ offset: 75 }).setText(
+		'法政大学'
 	);
 	const el5 = document.createElement('div');
-	el5.id = 'marker-building';
+	el5.id = 'pic-hosei';
 	new mapboxgl.Marker(el5)
-	.setLngLat(whitehouse)
+	.setLngLat(hosei)
 	.setPopup(popup5)
 	.addTo(map);
 
     const popup6 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'三輪田学園'
+		'佐川急便'
 	);
 	const el6 = document.createElement('div');
-	el6.id = 'marker-school';
+	el6.id = 'pic-sagawa';
 	new mapboxgl.Marker(el6)
-	.setLngLat(miwatagakuen)
+	.setLngLat(sagawa)
 	.setPopup(popup6)
 	.addTo(map);
 
     const popup7 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'信号'
+		'麒麟宴'
 	);
 	const el7 = document.createElement('div');
-	el7.id = 'marker-signal';
+	el7.id = 'pic-kirinen';
 	new mapboxgl.Marker(el7)
-	.setLngLat(kamakurapastaShingou)
+	.setLngLat(kirinen)
 	.setPopup(popup7)
 	.addTo(map);
 
     const popup8 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'直進'
+		'セブンイレブン'
 	);
 	const el8 = document.createElement('div');
-	el8.id = 'marker-straight';
+	el8.id = 'pic-goal';
 	new mapboxgl.Marker(el8)
-	.setLngLat(kamakurapastaKousaten)
+	.setLngLat(seven)
 	.setPopup(popup8)
 	.addTo(map);
 
     const popup9 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'佐川急便'
+		'法政大学'
 	);
 	const el9 = document.createElement('div');
-	el9.id = 'marker-building';
+	el9.id = 'pic-start';
 	new mapboxgl.Marker(el9)
-	.setLngLat(sagawa)
+	.setLngLat(start)
 	.setPopup(popup9)
 	.addTo(map);
 
-    const popup10 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'佐川急便 左'
-	);
-	const el10 = document.createElement('div');
-	el10.id = 'marker-cross-left';
-	new mapboxgl.Marker(el10)
-	.setLngLat(sagawaJuji)
-	.setPopup(popup10)
-	.addTo(map);
+    // const popup10 = new mapboxgl.Popup({ offset: 25 }).setText(
+	// 	'佐川急便 左'
+	// );
+	// const el10 = document.createElement('div');
+	// el10.id = 'marker-cross-left';
+	// new mapboxgl.Marker(el10)
+	// .setLngLat(sagawaJuji)
+	// .setPopup(popup10)
+	// .addTo(map);
 
-    const popup11 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'麒麟宴'
-	);
-	const el11 = document.createElement('div');
-	el11.id = 'marker-food';
-	new mapboxgl.Marker(el11)
-	.setLngLat(kirinen)
-	.setPopup(popup11)
-	.addTo(map);
+    // const popup11 = new mapboxgl.Popup({ offset: 25 }).setText(
+	// 	'麒麟宴'
+	// );
+	// const el11 = document.createElement('div');
+	// el11.id = 'marker-food';
+	// new mapboxgl.Marker(el11)
+	// .setLngLat(kirinen)
+	// .setPopup(popup11)
+	// .addTo(map);
 
-    const popup12 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'麒麟宴 右'
-	);
-	const el12 = document.createElement('div');
-	el12.id = 'marker-cross-right';
-	new mapboxgl.Marker(el12)
-	.setLngLat(kirinenJuji)
-	.setPopup(popup12)
-	.addTo(map);
+    // const popup12 = new mapboxgl.Popup({ offset: 25 }).setText(
+	// 	'麒麟宴 右'
+	// );
+	// const el12 = document.createElement('div');
+	// el12.id = 'marker-cross-right';
+	// new mapboxgl.Marker(el12)
+	// .setLngLat(kirinenJuji)
+	// .setPopup(popup12)
+	// .addTo(map);
 
-    const popup13 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'止まれ'
-	);
-	const el13 = document.createElement('div');
-	el13.id = 'marker-stop';
-	new mapboxgl.Marker(el13)
-	.setLngLat(tomare)
-	.setPopup(popup13)
-	.addTo(map);
+    // const popup13 = new mapboxgl.Popup({ offset: 25 }).setText(
+	// 	'止まれ'
+	// );
+	// const el13 = document.createElement('div');
+	// el13.id = 'marker-stop';
+	// new mapboxgl.Marker(el13)
+	// .setLngLat(tomare)
+	// .setPopup(popup13)
+	// .addTo(map);
 
-    const popup14 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'特徴的な建物'
-	);
-	const el14 = document.createElement('div');
-	el14.id = 'marker-building';
-	new mapboxgl.Marker(el14)
-	.setLngLat(amiami)
-	.setPopup(popup14)
-	.addTo(map);
+    // const popup14 = new mapboxgl.Popup({ offset: 25 }).setText(
+	// 	'特徴的な建物'
+	// );
+	// const el14 = document.createElement('div');
+	// el14.id = 'marker-building';
+	// new mapboxgl.Marker(el14)
+	// .setLngLat(amiami)
+	// .setPopup(popup14)
+	// .addTo(map);
 
-    const popup15 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'特徴的な建物 左'
-	);
-	const el15 = document.createElement('div');
-	el15.id = 'marker-next-left';
-	new mapboxgl.Marker(el15)
-	.setLngLat(amiamiJuji)
-	.setPopup(popup15)
-	.addTo(map);
+    // const popup15 = new mapboxgl.Popup({ offset: 25 }).setText(
+	// 	'特徴的な建物 左'
+	// );
+	// const el15 = document.createElement('div');
+	// el15.id = 'marker-next-left';
+	// new mapboxgl.Marker(el15)
+	// .setLngLat(amiamiJuji)
+	// .setPopup(popup15)
+	// .addTo(map);
 
-    const popup16 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'突き当り 右'
-	);
-	const el16 = document.createElement('div');
-	el16.id = 'marker-T-right';
-	new mapboxgl.Marker(el16)
-	.setLngLat(tsukiatari)
-	.setPopup(popup16)
-	.addTo(map);
+    // const popup16 = new mapboxgl.Popup({ offset: 25 }).setText(
+	// 	'突き当り 右'
+	// );
+	// const el16 = document.createElement('div');
+	// el16.id = 'marker-T-right';
+	// new mapboxgl.Marker(el16)
+	// .setLngLat(tsukiatari)
+	// .setPopup(popup16)
+	// .addTo(map);
 
-    const popup17 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'セブンイレブン'
-	);
-	const el17 = document.createElement('div');
-	el17.id = 'marker-convenience-store';
-	new mapboxgl.Marker(el17)
-	.setLngLat(seven)
-	.setPopup(popup17)
-	.addTo(map);
+    // const popup17 = new mapboxgl.Popup({ offset: 25 }).setText(
+	// 	'セブンイレブン'
+	// );
+	// const el17 = document.createElement('div');
+	// el17.id = 'marker-convenience-store';
+	// new mapboxgl.Marker(el17)
+	// .setLngLat(seven)
+	// .setPopup(popup17)
+	// .addTo(map);
 
-    // 忘れ
-    const popup18 = new mapboxgl.Popup({ offset: 25 }).setText(
-		'鎌倉パスタ'
-	);
-	const el18 = document.createElement('div');
-	el18.id = 'marker-food';
-	new mapboxgl.Marker(el18)
-	.setLngLat(kamakurapasta)
-	.setPopup(popup18)
-	.addTo(map);
+    // // 忘れ
+    // const popup18 = new mapboxgl.Popup({ offset: 25 }).setText(
+	// 	'鎌倉パスタ'
+	// );
+	// const el18 = document.createElement('div');
+	// el18.id = 'marker-food';
+	// new mapboxgl.Marker(el18)
+	// .setLngLat(kamakurapasta)
+	// .setPopup(popup18)
+	// .addTo(map);
+
+
     
 
 	// マーカー表示＆クリックで飛ぶ
